@@ -28,3 +28,17 @@ total_summary
 ## Generate lot_summary df using summarize and group_by
 lot_summary <- sus_data %>% group_by(Manufacturing_Lot) %>% 
   summarize(Mean=mean(PSI), Median=median(PSI), Variance=var(PSI), SD=sd(PSI), .groups='keep')
+
+# DELIVERABLE 3 - T-Tests on Suspension Coils
+
+## Utilize t.test() to determine if PSI across manufacturing lots is statistically different from the population mean
+t.test(sus_data$PSI, mu = 1500)
+
+## Lot 1 T-Test
+t.test(subset(sus_data, Manufacturing_Lot == 'Lot1')$PSI, mu = 1500)
+
+## Lot 2 T-Test
+t.test(subset(sus_data, Manufacturing_Lot == 'Lot2')$PSI, mu = 1500)
+
+## Lot 3 T-Test
+t.test(subset(sus_data, Manufacturing_Lot == 'Lot3')$PSI, mu = 1500)
