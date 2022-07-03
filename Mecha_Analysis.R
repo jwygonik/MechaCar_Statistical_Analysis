@@ -11,3 +11,4 @@ mpg_lreg <- lm(mpg ~ vehicle_length + vehicle_weight + spoiler_angle + ground_cl
 
 ## Use summary() to get the p-value and r-squared of linreg 
 summary(mpg_lreg)
+
